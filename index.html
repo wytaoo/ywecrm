@@ -112,7 +112,7 @@
     }
 
     .menu-item.active {
-      background-color: #40B9F6;
+      background-color: #29A5E8;
       color: #fff;
     }
 
@@ -152,7 +152,7 @@
 
     .sub-menu {
       background-color: #fff;
-      border-left: 2px solid #40B9F6;
+      border-left: 2px solid #29A5E8;
       border-top: 1px solid #f0f0f0;
     }
 
@@ -170,12 +170,12 @@
 
     .sub-menu-item:hover {
       background-color: #f8f8f8;
-      color: #40B9F6;
+      color: #29A5E8;
     }
 
     .sub-menu-item.active {
       background-color: #e8f4fc;
-      color: #40B9F6;
+      color: #29A5E8;
       font-weight: 500;
     }
 
@@ -219,7 +219,7 @@
     .header-row-header,
     .info-row-header,
     .bottom-row-header {
-      background-color: #40B9F6;
+      background-color: #29A5E8;
       padding: 0 15px;
       display: flex;
       align-items: flex-end;
@@ -256,7 +256,7 @@
 
     .tab.active {
       background-color: #fff;
-      color: #40B9F6;
+      color: #29A5E8;
     }
 
     .search-bar {
@@ -290,7 +290,7 @@
     }
 
     .search-input:focus {
-      border-color: #40B9F6;
+      border-color: #29A5E8;
       box-shadow: 0 0 0 2px rgba(64, 185, 246, 0.2);
     }
 
@@ -312,7 +312,7 @@
     }
 
     .btn-primary {
-      background-color: #40B9F6;
+      background-color: #29A5E8;
       color: #fff;
     }
 
@@ -321,7 +321,7 @@
     }
 
     .btn-secondary {
-      background-color: #40B9F6;
+      background-color: #29A5E8;
       color: #fff;
     }
 
@@ -364,20 +364,356 @@
     }
 
     .info-input:focus {
-      border-color: #40B9F6;
+      border-color: #29A5E8;
       box-shadow: 0 0 0 2px rgba(64, 185, 246, 0.2);
     }
 
     .bottom-content {
       flex: 1;
       min-height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       color: #666;
       font-size: 14px;
       background-color: #fafafa;
       border-top: 1px solid #ddd;
+    }
+
+    .basic-info-content {
+      padding: 20px;
+    }
+
+    .file-upload {
+      width: 100%;
+    }
+
+    .upload-btn {
+      width: 100%;
+      padding: 8px 12px;
+      border: 2px dashed #bbb;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #666;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .upload-btn:hover {
+      border-color: #29A5E8;
+      color: #29A5E8;
+      background-color: #f0f8ff;
+    }
+
+    .file-display {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    .file-name {
+      flex: 1;
+      font-size: 13px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-action-btn {
+      padding: 4px 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background-color: #e8e8e8;
+      color: #333;
+    }
+
+    .file-action-btn:hover {
+      background-color: #29A5E8;
+      color: #fff;
+    }
+
+    .contract-content {
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .contract-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 800px;
+    }
+
+    .contract-table th,
+    .contract-table td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .contract-table th {
+      background-color: #f8f8f8;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .contract-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .attachment-cell {
+      max-width: 250px;
+      word-break: break-all;
+    }
+
+    .attachment-link {
+      color: #29A5E8;
+      cursor: pointer;
+      margin-bottom: 4px;
+    }
+
+    .attachment-link:last-child {
+      margin-bottom: 0;
+    }
+
+    .attachment-link:hover {
+      text-decoration: underline;
+    }
+
+    .download-btn {
+      padding: 4px 12px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      background-color: #29A5E8;
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .download-btn:hover {
+      background-color: #1a8cd9;
+    }
+
+    .finance-content {
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .finance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .finance-section {
+      margin-top: 20px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #29A5E8;
+    }
+
+    .finance-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .finance-table th,
+    .finance-table td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .finance-table th {
+      background-color: #f8f8f8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .finance-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .freeze-content {
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .freeze-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 900px;
+    }
+
+    .freeze-table th,
+    .freeze-table td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .freeze-table th {
+      background-color: #f8f8f8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .freeze-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .view-btn {
+      padding: 4px 12px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      background-color: #29A5E8;
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .view-btn:hover {
+      background-color: #1a8cd9;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal {
+      background-color: #fff;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 1100px;
+      max-height: 85vh;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #29A5E8;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .modal-title {
+      font-size: 16px;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .modal-content {
+      padding: 20px;
+      overflow-y: auto;
+      max-height: calc(70vh - 110px);
+    }
+
+    .freeze-log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .freeze-log-table th,
+    .freeze-log-table td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .freeze-log-table th {
+      background-color: #f8f8f8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .freeze-log-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .status-frozen {
+      color: #dc3545 !important;
+    }
+
+    .modal-footer {
+      padding: 15px 20px;
+      text-align: right;
+      border-top: 1px solid #eee;
+      background-color: #fafafa;
+    }
+
+    .modal-close-btn {
+      padding: 6px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #29A5E8;
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      background-color: #1a8cd9;
     }
 
     @media screen and (max-width: 1000px) {
@@ -495,10 +831,107 @@
               </div>
             </div>
             <div class="bottom-content">
-              <div v-if="activeBottomTab === 'basic'">基本信息内容区域</div>
-              <div v-if="activeBottomTab === 'contract'">合同信息内容区域</div>
-              <div v-if="activeBottomTab === 'finance'">财务信息内容区域</div>
-              <div v-if="activeBottomTab === 'freeze'">冻结解冻内容区域</div>
+              <div v-if="activeBottomTab === 'basic'" class="basic-info-content">
+                <div class="info-grid">
+                  <div v-for="field in basicInfoFields" :key="field.label" class="info-item">
+                    <label class="info-label">{{ field.label }}</label>
+                    <input v-if="field.type === 'text'" type="text" class="info-input" :value="field.value" readonly />
+                    <div v-else-if="field.type === 'file'" class="file-upload">
+                      <div v-if="field.fileName" class="file-display">
+                        <span class="file-name">{{ field.fileName }}</span>
+                        <button class="file-action-btn">查看</button>
+                        <button class="file-action-btn">更新</button>
+                      </div>
+                      <button v-else class="upload-btn">上传附件</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div v-if="activeBottomTab === 'contract'" class="contract-content">
+                <table class="contract-table">
+                  <thead>
+                    <tr>
+                      <th>类型</th>
+                      <th>合同编号</th>
+                      <th>合同名称</th>
+                      <th>合同附件</th>
+                      <th>签约时间</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in contractData" :key="item.contractNo">
+                      <td>{{ item.type }}</td>
+                      <td>{{ item.contractNo }}</td>
+                      <td>{{ item.contractName }}</td>
+                      <td class="attachment-cell">
+                        <div v-for="(link, index) in item.attachments" :key="index" class="attachment-link">
+                          {{ link }}
+                        </div>
+                      </td>
+                      <td>{{ item.signDate }}</td>
+                      <td>{{ item.status }}</td>
+                      <td><button class="download-btn">下载</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div v-if="activeBottomTab === 'finance'" class="finance-content">
+                <div class="finance-grid">
+                  <div v-for="field in financeInfoFields" :key="field.label" class="info-item">
+                    <label class="info-label">{{ field.label }}</label>
+                    <input type="text" class="info-input" :value="field.value" readonly />
+                  </div>
+                </div>
+                <div class="finance-section">
+                  <div class="section-title">付款备案</div>
+                  <table class="finance-table">
+                    <thead>
+                      <tr>
+                        <th>银行名称</th>
+                        <th>银行账号</th>
+                        <th>付款人名称</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(item, index) in paymentRecords" :key="index">
+                        <td>{{ item.bankName }}</td>
+                        <td>{{ item.bankAccount }}</td>
+                        <td>{{ item.payerName }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div v-if="activeBottomTab === 'freeze'" class="freeze-content">
+                <table class="freeze-table">
+                  <thead>
+                    <tr>
+                      <th>冻结类型</th>
+                      <th>状态</th>
+                      <th>最新更新时间</th>
+                      <th>信用额度</th>
+                      <th>临时信用额度</th>
+                      <th>临时额度生效时间</th>
+                      <th>临时额度失效时间</th>
+                      <th>操作记录</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in freezeData" :key="item.type">
+                      <td>{{ item.type }}</td>
+                      <td>{{ item.status }}</td>
+                      <td>{{ item.updateTime }}</td>
+                      <td>{{ item.creditLimit }}</td>
+                      <td>{{ item.tempCreditLimit }}</td>
+                      <td>{{ item.tempEffectiveTime }}</td>
+                      <td>{{ item.tempExpireTime }}</td>
+                      <td><button class="view-btn" @click="openFreezeModal(item.type)">查看</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div v-if="activeBottomTab === 'contact'">联系人配置内容区域</div>
               <div v-if="activeBottomTab === 'address'">地址管理内容区域</div>
               <div v-if="activeBottomTab === 'log'">操作日志内容区域</div>
@@ -506,6 +939,40 @@
           </div>
         </div>
       </main>
+    </div>
+
+    <div v-if="showFreezeModal" class="modal-overlay" @click.self="closeFreezeModal">
+      <div class="modal">
+        <div class="modal-header">
+          <span class="modal-title">操作记录</span>
+          <button class="modal-close" @click="closeFreezeModal">×</button>
+        </div>
+        <div class="modal-content">
+          <table class="freeze-log-table">
+            <thead>
+              <tr>
+                <th>冻结类型</th>
+                <th>状态</th>
+                <th>冻结解冻原因</th>
+                <th>操作时间</th>
+                <th>创建人</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(log, index) in freezeLogData" :key="index">
+                <td>{{ log.type }}</td>
+                <td :class="{ 'status-frozen': log.status === '冻结' }">{{ log.status }}</td>
+                <td>{{ log.reason }}</td>
+                <td>{{ log.operationTime }}</td>
+                <td>{{ log.creator }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-close-btn" @click="closeFreezeModal">关闭</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -538,20 +1005,36 @@
         ]
 
         const customerInfoFields = [
-          { label: '客户编号', value: '' },
-          { label: '客户名称', value: '' },
-          { label: '结算公司', value: '' },
-          { label: '结算周期', value: '' },
-          { label: '结算币种', value: '' },
-          { label: '账务余额', value: '' },
-          { label: '制单预扣金额', value: '' },
-          { label: '未出账金额', value: '' },
-          { label: '账户余额', value: '' },
-          { label: '客户签约状态', value: '' },
-          { label: '客户活动状态', value: '' },
-          { label: '是否验证余额', value: '' },
-          { label: '推荐销售', value: '' },
-          { label: '客服', value: '' }
+          { label: '客户编号', value: 'C000001' },
+          { label: '客户名称', value: 'test customer' },
+          { label: '结算公司', value: '928_Yanwen Express LLC' },
+          { label: '结算周期', value: '预付' },
+          { label: '结算币种', value: 'USD' },
+          { label: '账务余额', value: '1000.00' },
+          { label: '制单预扣金额', value: '100.00' },
+          { label: '未出账金额', value: '500.00' },
+          { label: '账户余额', value: '1600.00' },
+          { label: '客户签约状态', value: '已签约' },
+          { label: '客户活动状态', value: '活动' },
+          { label: '是否验证余额', value: '是' },
+          { label: '推荐销售', value: '李红' },
+          { label: '客服', value: '张三' }  
+        ]
+
+        const basicInfoFields = [
+          { label: '客户中文简称', value: '测试客户', type: 'text' },
+          { label: '客户主体类型', value: 'LLC', type: 'text' },
+          { label: '成立州', value: 'CA', type: 'text' },
+          { label: '销售代理公司', value: '', type: 'text' },
+          { label: '追踪单号类型', value: 'YWE单号', type: 'text' },
+          { label: '是否需要揽收', value: '是', type: 'text' },
+          { label: '揽收类型', value: '清关行揽收', type: 'text' },
+          { label: '最大暂存天数', value: '20', type: 'text' },
+          { label: '理赔上限', value: '100.00', type: 'text' },
+          { label: '成立证明', value: '', type: 'file', fileName: 'certificate_of_incorporation.pdf' },
+          { label: 'EIN文件', value: '', type: 'file', fileName: 'EIN_W7_form.pdf' },
+          { label: '合同签署人职位证明', value: '', type: 'file', fileName: '' },
+          { label: 'LLC operating agreement', value: '', type: 'file', fileName: '' }
         ]
 
         const bottomTabs = [
@@ -563,6 +1046,70 @@
           { id: 'address', label: '地址管理' },
           { id: 'log', label: '操作日志' }
         ]
+
+        const contractData = [
+          {
+            type: '普通合同',
+            contractNo: 'C000001-20250701',
+            contractName: 'C000001-test customer预付合同20250701',
+            attachments: [
+              'https://fsl.yanwenexpress.com/downloadfile/112971/双方签字版_YWE_Schedule_A_10.25--C000109C000117.pdf',
+              'https://fsl.yanwenexpress.com/downloadfile/112971/'
+            ],
+            signDate: '2025/7/1 0:00',
+            status: '生效中',
+            action: '下载'
+          },
+          {
+            type: '补充协议',
+            contractNo: 'C000001-20260512',
+            contractName: 'C000001-test customer预付合同补充协议20250701',
+            attachments: [
+              '补充协议双方签字版_YWE_Schedule_A_10.25--C000109C000117.pdf',
+              'https://fsl.yanwenexpress.com/downloadfile/112971/'
+            ],
+            signDate: '2026/5/12 0:00',
+            status: '生效中',
+            action: '下载'
+          }
+        ]
+
+        const financeInfoFields = [
+          { label: 'EIN号码', value: '76641234' },
+          { label: 'Swift码', value: 'SVBK1234' },
+          { label: '路由号', value: '121140399' },
+          { label: '账单接收邮箱', value: 'customer@email.com' },
+          { label: 'YWE收款银行名称', value: 'Citibank' },
+          { label: 'YWE收款账户', value: '1234567' }
+        ]
+
+        const paymentRecords = [
+          { bankName: 'SVB, a division', bankAccount: '1234512345', payerName: 'test customer' },
+          { bankName: 'SVB, a division', bankAccount: '1234512345', payerName: 'test customer' },
+          { bankName: 'US BANK', bankAccount: '157534212345', payerName: 'test customer' }
+        ]
+
+        const freezeData = [
+          { type: '金额冻结', status: '活动', updateTime: '2026/6/22 15:18', creditLimit: '100000', tempCreditLimit: '2000', tempEffectiveTime: '2026/6/1 0:00', tempExpireTime: '2026/6/5 0:00' },
+          { type: '长期不发货冻结', status: '活动', updateTime: '2025/1/22 12:21', creditLimit: '', tempCreditLimit: '', tempEffectiveTime: '', tempExpireTime: '' },
+          { type: '不合作冻结', status: '活动', updateTime: '2025/1/22 12:21', creditLimit: '', tempCreditLimit: '', tempEffectiveTime: '', tempExpireTime: '' },
+          { type: '资料不全冻结', status: '活动', updateTime: '2025/1/22 12:21', creditLimit: '', tempCreditLimit: '', tempEffectiveTime: '', tempExpireTime: '' }
+        ]
+
+        const showFreezeModal = ref(false)
+        const freezeLogData = ref([
+          { type: '金额冻结', status: '活动', reason: '预付充值到账，可用余额>0', operationTime: '2026/6/22 15:18', creator: '系统' },
+          { type: '金额冻结', status: '活动', reason: '预付充值到账，可用余额>0', operationTime: '2026/6/22 15:18', creator: '系统' },
+          { type: '金额冻结', status: '冻结', reason: '可用余额不足，自动冻结', operationTime: '2026/6/20 15:18', creator: '系统' }
+        ])
+
+        const openFreezeModal = (type) => {
+          showFreezeModal.value = true
+        }
+
+        const closeFreezeModal = () => {
+          showFreezeModal.value = false
+        }
 
         const toggleMenu = (item) => {
           if (item.children && item.children.length > 0) {
@@ -594,6 +1141,15 @@
           searchForm,
           menuItems,
           customerInfoFields,
+          basicInfoFields,
+          contractData,
+          financeInfoFields,
+          paymentRecords,
+          freezeData,
+          showFreezeModal,
+          freezeLogData,
+          openFreezeModal,
+          closeFreezeModal,
           bottomTabs,
           toggleMenu,
           selectMenu,
