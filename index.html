@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>客户管理系统</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      background-color: #f5f5f5;
+    }
+
+    #app {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a0a0a0;
+    }
+
+    .app-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f5f5f5;
+      border-right: 1px solid #ddd;
+      flex-shrink: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-header {
+      height: 50px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .menu {
+      flex: 1;
+      padding: 5px 0;
+    }
+
+    .menu-group {
+      margin-bottom: 0;
+    }
+
+    .menu-group-title {
+      padding: 10px 15px;
+      font-size: 12px;
+      color: #333;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background-color: #eee;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 11px 15px;
+      cursor: pointer;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.2s;
+      position: relative;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu-item:hover {
+      background-color: #f0f8ff;
+    }
+
+    .menu-item.active {
+      background-color: #40B9F6;
+      color: #fff;
+    }
+
+    .menu-item-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #666;
+    }
+
+    .menu-item.active .menu-item-icon {
+      color: #fff;
+    }
+
+    .menu-item-label {
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .menu-item-arrow {
+      font-size: 14px;
+      color: #666;
+      transition: transform 0.2s;
+    }
+
+    .menu-item.active .menu-item-arrow {
+      color: #fff;
+    }
+
+    .menu-item.expanded .menu-item-arrow {
+      transform: rotate(180deg);
+    }
+
+    .sub-menu {
+      background-color: #fff;
+      border-left: 2px solid #40B9F6;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .sub-menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px 10px 45px;
+      cursor: pointer;
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.2s;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .sub-menu-item:hover {
+      background-color: #f8f8f8;
+      color: #40B9F6;
+    }
+
+    .sub-menu-item.active {
+      background-color: #e8f4fc;
+      color: #40B9F6;
+      font-weight: 500;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
+      background-color: #f5f5f5;
+    }
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: auto;
+      padding: 15px;
+    }
+
+    .header-row,
+    .info-row,
+    .bottom-row {
+      display: flex;
+      flex-direction: column;
+      min-width: 100%;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+
+    .header-row:last-child,
+    .info-row:last-child,
+    .bottom-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .header-row-header,
+    .info-row-header,
+    .bottom-row-header {
+      background-color: #40B9F6;
+      padding: 0 15px;
+      display: flex;
+      align-items: flex-end;
+      height: 44px;
+    }
+
+    .header-tabs,
+    .section-tabs,
+    .bottom-tabs {
+      display: flex;
+    }
+
+    .tab {
+      padding: 0 20px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #fff;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      transition: all 0.2s;
+      margin-right: 4px;
+      position: relative;
+      height: 36px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+
+    .tab:hover {
+      color: #fff;
+    }
+
+    .tab.active {
+      background-color: #fff;
+      color: #40B9F6;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    .search-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-label {
+      color: #333;
+      font-size: 14px;
+    }
+
+    .search-input {
+      width: 180px;
+      padding: 8px 12px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      color: #333;
+    }
+
+    .search-input:focus {
+      border-color: #40B9F6;
+      box-shadow: 0 0 0 2px rgba(64, 185, 246, 0.2);
+    }
+
+    .search-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 7px 18px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-primary {
+      background-color: #40B9F6;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: #30A9E6;
+    }
+
+    .btn-secondary {
+      background-color: #40B9F6;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: #30A9E6;
+    }
+
+    .info-content,
+    .bottom-content {
+      padding: 20px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .info-label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .info-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 14px;
+      background-color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+      color: #333;
+    }
+
+    .info-input:focus {
+      border-color: #40B9F6;
+      box-shadow: 0 0 0 2px rgba(64, 185, 246, 0.2);
+    }
+
+    .bottom-content {
+      flex: 1;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 14px;
+      background-color: #fafafa;
+      border-top: 1px solid #ddd;
+    }
+
+    @media screen and (max-width: 1000px) {
+      html, body {
+        font-size: 13px;
+      }
+      
+      .sidebar {
+        width: 180px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      html, body {
+        font-size: 12px;
+      }
+      
+      .sidebar {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="app-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">客户管理系统</div>
+        <nav class="menu">
+          <div class="menu-group">
+            <div class="menu-group-title">业务管理</div>
+            <div
+              v-for="item in menuItems"
+              :key="item.id"
+            >
+              <div
+                class="menu-item"
+                :class="{ active: activeMenu === item.id, expanded: expandedMenus.includes(item.id) }"
+                @click="toggleMenu(item)"
+              >
+                <span class="menu-item-icon">
+                  <span v-if="item.id === 'customerQuery'">≡</span>
+                  <span v-else-if="item.id === 'customerAudit'">≡</span>
+                  <span v-else>⚙</span>
+                </span>
+                <span class="menu-item-label">{{ item.label }}</span>
+                <span v-if="item.children && item.children.length > 0" class="menu-item-arrow">▼</span>
+              </div>
+              <div v-if="item.children && item.children.length > 0 && expandedMenus.includes(item.id)" class="sub-menu">
+                <div
+                  v-for="child in item.children"
+                  :key="child.id"
+                  class="sub-menu-item"
+                  :class="{ active: activeMenu === child.id }"
+                  @click.stop="selectMenu(child)"
+                >
+                  {{ child.label }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <div class="content-wrapper">
+          <div class="header-row">
+            <div class="header-row-header">
+              <div class="header-tabs">
+                <div class="tab active">客户信息查询</div>
+              </div>
+            </div>
+            <div class="search-bar">
+              <div class="search-item">
+                <label class="search-label">客户号:</label>
+                <input type="text" class="search-input" v-model="searchForm.customerNo" placeholder="请输入客户号" />
+              </div>
+              <div class="search-buttons">
+                <button class="btn btn-primary">查询</button>
+                <button class="btn btn-secondary">修改客户信息</button>
+                <button class="btn btn-secondary">账期变更申请</button>
+                <button class="btn btn-primary">创建客户号</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-row-header">
+              <div class="section-tabs">
+                <div class="tab active">客户信息</div>
+              </div>
+            </div>
+            <div class="info-content">
+              <div class="info-grid">
+                <div class="info-item" v-for="(field, index) in customerInfoFields" :key="index">
+                  <label class="info-label">{{ field.label }}</label>
+                  <input type="text" class="info-input" :value="field.value" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-row">
+            <div class="bottom-row-header">
+              <div class="bottom-tabs">
+                <div
+                  v-for="tab in bottomTabs"
+                  :key="tab.id"
+                  class="tab"
+                  :class="{ active: activeBottomTab === tab.id }"
+                  @click="activeBottomTab = tab.id"
+                >
+                  {{ tab.label }}
+                </div>
+              </div>
+            </div>
+            <div class="bottom-content">
+              <div v-if="activeBottomTab === 'basic'">基本信息内容区域</div>
+              <div v-if="activeBottomTab === 'contract'">合同信息内容区域</div>
+              <div v-if="activeBottomTab === 'finance'">财务信息内容区域</div>
+              <div v-if="activeBottomTab === 'freeze'">冻结解冻内容区域</div>
+              <div v-if="activeBottomTab === 'contact'">联系人配置内容区域</div>
+              <div v-if="activeBottomTab === 'address'">地址管理内容区域</div>
+              <div v-if="activeBottomTab === 'log'">操作日志内容区域</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref, reactive } = Vue
+
+    createApp({
+      setup() {
+        const activeMenu = ref('customerQuery')
+        const expandedMenus = ref(['customerConfig'])
+        const activeBottomTab = ref('basic')
+
+        const searchForm = reactive({
+          customerNo: ''
+        })
+
+        const menuItems = [
+          { id: 'customerQuery', label: '客户信息查询', children: [] },
+          { id: 'customerAudit', label: '客户信息审核', children: [] },
+          {
+            id: 'customerConfig',
+            label: '客户配置',
+            children: [
+              { id: 'creditConfig', label: '信用额度配置' },
+              { id: 'settlementCycle', label: '商户结算周期' },
+              { id: 'billingNode', label: '应收计费节点配置' },
+              { id: 'serviceRotation', label: '客服销售轮巡' }
+            ]
+          }
+        ]
+
+        const customerInfoFields = [
+          { label: '客户编号', value: '' },
+          { label: '客户名称', value: '' },
+          { label: '结算公司', value: '' },
+          { label: '结算周期', value: '' },
+          { label: '结算币种', value: '' },
+          { label: '账务余额', value: '' },
+          { label: '制单预扣金额', value: '' },
+          { label: '未出账金额', value: '' },
+          { label: '账户余额', value: '' },
+          { label: '客户签约状态', value: '' },
+          { label: '客户活动状态', value: '' },
+          { label: '是否验证余额', value: '' },
+          { label: '推荐销售', value: '' },
+          { label: '客服', value: '' }
+        ]
+
+        const bottomTabs = [
+          { id: 'basic', label: '基本信息' },
+          { id: 'contract', label: '合同信息' },
+          { id: 'finance', label: '财务信息' },
+          { id: 'freeze', label: '冻结解冻' },
+          { id: 'contact', label: '联系人配置' },
+          { id: 'address', label: '地址管理' },
+          { id: 'log', label: '操作日志' }
+        ]
+
+        const toggleMenu = (item) => {
+          if (item.children && item.children.length > 0) {
+            const index = expandedMenus.value.indexOf(item.id)
+            if (index > -1) {
+              expandedMenus.value.splice(index, 1)
+            } else {
+              expandedMenus.value.push(item.id)
+            }
+          }
+          activeMenu.value = item.id
+        }
+
+        const selectMenu = (child) => {
+          activeMenu.value = child.id
+        }
+
+        const isChildActive = (item) => {
+          if (item.children && item.children.length > 0) {
+            return item.children.some(child => activeMenu.value === child.id)
+          }
+          return false
+        }
+
+        return {
+          activeMenu,
+          expandedMenus,
+          activeBottomTab,
+          searchForm,
+          menuItems,
+          customerInfoFields,
+          bottomTabs,
+          toggleMenu,
+          selectMenu,
+          isChildActive
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
