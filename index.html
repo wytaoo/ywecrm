@@ -262,8 +262,8 @@
     .search-bar {
       display: flex;
       align-items: center;
-      gap: 15px;
-      padding: 15px;
+      gap: 12px;
+      padding: 10px 15px;
       flex-wrap: wrap;
     }
 
@@ -331,19 +331,19 @@
 
     .info-content,
     .bottom-content {
-      padding: 20px;
+      padding: 15px;
     }
 
     .info-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
+      gap: 12px;
     }
 
     .info-item {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
 
     .info-label {
@@ -378,7 +378,7 @@
     }
 
     .basic-info-content {
-      padding: 20px;
+      padding: 15px;
     }
 
     .file-upload {
@@ -440,7 +440,7 @@
     }
 
     .contract-content {
-      padding: 20px;
+      padding: 15px;
       overflow-x: auto;
     }
 
@@ -454,7 +454,7 @@
     .contract-table th,
     .contract-table td {
       border: 1px solid #ddd;
-      padding: 10px 12px;
+      padding: 8px 10px;
       text-align: left;
       vertical-align: top;
       color: #333;
@@ -506,27 +506,27 @@
     }
 
     .finance-content {
-      padding: 20px;
+      padding: 15px;
       overflow-x: auto;
     }
 
     .finance-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-bottom: 25px;
+      gap: 12px;
+      margin-bottom: 15px;
     }
 
     .finance-section {
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .section-title {
       font-size: 14px;
       font-weight: 600;
       color: #333;
-      margin-bottom: 15px;
-      padding-bottom: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
       border-bottom: 2px solid #29A5E8;
     }
 
@@ -539,7 +539,7 @@
     .finance-table th,
     .finance-table td {
       border: 1px solid #ddd;
-      padding: 10px 12px;
+      padding: 8px 10px;
       text-align: left;
       vertical-align: top;
       color: #333;
@@ -556,7 +556,7 @@
     }
 
     .freeze-content {
-      padding: 20px;
+      padding: 15px;
       overflow-x: auto;
     }
 
@@ -570,7 +570,7 @@
     .freeze-table th,
     .freeze-table td {
       border: 1px solid #ddd;
-      padding: 10px 12px;
+      padding: 8px 10px;
       text-align: left;
       vertical-align: top;
       color: #333;
@@ -674,7 +674,7 @@
     .freeze-log-table th,
     .freeze-log-table td {
       border: 1px solid #ddd;
-      padding: 10px 12px;
+      padding: 8px 10px;
       text-align: left;
       vertical-align: top;
       color: #333;
@@ -714,6 +714,123 @@
 
     .modal-close-btn:hover {
       background-color: #1a8cd9;
+    }
+
+    .contact-content {
+      padding: 15px;
+      overflow-x: auto;
+    }
+
+    .contact-section {
+      margin-bottom: 18px;
+    }
+
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 700px;
+    }
+
+    .contact-table th,
+    .contact-table td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .contact-table th {
+      background-color: #f8f8f8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .contact-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .address-content {
+      padding: 15px;
+      overflow-x: auto;
+    }
+
+    .address-section {
+      margin-bottom: 18px;
+    }
+
+    .address-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 800px;
+    }
+
+    .address-table th,
+    .address-table td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .address-table th {
+      background-color: #f8f8f8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .address-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .log-content {
+      padding: 15px;
+      overflow-x: auto;
+    }
+
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 900px;
+    }
+
+    .log-table th,
+    .log-table td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      color: #333;
+    }
+
+    .log-table th {
+      background-color: #f8f8f8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .log-table tbody tr:hover {
+      background-color: #f5f8fc;
+    }
+
+    .target-value-cell {
+      max-width: 200px;
+      word-break: break-all;
+    }
+
+    .text-truncate {
+      color: #29A5E8;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .text-truncate:hover {
+      text-decoration: underline;
     }
 
     @media screen and (max-width: 1000px) {
@@ -932,9 +1049,162 @@
                   </tbody>
                 </table>
               </div>
-              <div v-if="activeBottomTab === 'contact'">联系人配置内容区域</div>
-              <div v-if="activeBottomTab === 'address'">地址管理内容区域</div>
-              <div v-if="activeBottomTab === 'log'">操作日志内容区域</div>
+              <div v-if="activeBottomTab === 'contact'" class="contact-content">
+                <div class="contact-section">
+                  <div class="section-title">客户联系人</div>
+                  <table class="contact-table">
+                    <thead>
+                      <tr>
+                        <th>联系人firstname</th>
+                        <th>联系人midname</th>
+                        <th>联系人lastname</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>职位</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(item, index) in customerContacts" :key="index">
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.midName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.phone }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.position }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="contact-section">
+                  <div class="section-title">紧急联系人</div>
+                  <table class="contact-table">
+                    <thead>
+                      <tr>
+                        <th>联系人firstname</th>
+                        <th>联系人midname</th>
+                        <th>联系人lastname</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>职位</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(item, index) in emergencyContacts" :key="index">
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.midName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.phone }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.position }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="contact-section">
+                  <div class="section-title">合同签约人</div>
+                  <table class="contact-table">
+                    <thead>
+                      <tr>
+                        <th>联系人firstname</th>
+                        <th>联系人midname</th>
+                        <th>联系人lastname</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>职位</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(item, index) in contractSigners" :key="index">
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.midName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.phone }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.position }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div v-if="activeBottomTab === 'address'" class="address-content">
+                <div class="address-section">
+                  <div class="section-title">公司地址</div>
+                  <table class="address-table">
+                    <thead>
+                      <tr>
+                        <th>地址</th>
+                        <th>省/州</th>
+                        <th>城市</th>
+                        <th>公司邮编</th>
+                        <th>国家</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(item, index) in companyAddresses" :key="index">
+                        <td>{{ item.address }}</td>
+                        <td>{{ item.state }}</td>
+                        <td>{{ item.city }}</td>
+                        <td>{{ item.zipCode }}</td>
+                        <td>{{ item.country }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="address-section">
+                  <div class="section-title">退件地址</div>
+                  <table class="address-table">
+                    <thead>
+                      <tr>
+                        <th>交货仓</th>
+                        <th>退回方式</th>
+                        <th>退回渠道</th>
+                        <th>退回地址</th>
+                        <th>联系人姓名</th>
+                        <th>联系人电话</th>
+                        <th>联系人邮箱</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(item, index) in returnAddresses" :key="index">
+                        <td>{{ item.warehouse }}</td>
+                        <td>{{ item.returnMethod }}</td>
+                        <td>{{ item.returnChannel }}</td>
+                        <td>{{ item.returnAddress }}</td>
+                        <td>{{ item.contactName }}</td>
+                        <td>{{ item.contactPhone }}</td>
+                        <td>{{ item.contactEmail }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div v-if="activeBottomTab === 'log'" class="log-content">
+                <table class="log-table">
+                  <thead>
+                    <tr>
+                      <th>操作类型</th>
+                      <th>字段名</th>
+                      <th>原值</th>
+                      <th>目标值</th>
+                      <th>操作时间</th>
+                      <th>操作人</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(item, index) in operationLogData" :key="index">
+                      <td>{{ item.type }}</td>
+                      <td>{{ item.fieldName }}</td>
+                      <td>{{ item.originalValue }}</td>
+                      <td class="target-value-cell">
+                        <span class="text-truncate" :title="item.targetValue" v-if="item.targetValue.length > 40">{{ item.targetValue.substring(0, 40) }}...</span>
+                        <span v-else>{{ item.targetValue }}</span>
+                      </td>
+                      <td>{{ item.operationTime }}</td>
+                      <td>{{ item.operator }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -1089,6 +1359,38 @@
           { bankName: 'US BANK', bankAccount: '157534212345', payerName: 'test customer' }
         ]
 
+        const customerContacts = [
+          { firstName: 'Michael', midName: 'James', lastName: 'Wilson', phone: '+1 12345', email: 'Michael@email.com', position: 'CEO' }
+        ]
+
+        const emergencyContacts = [
+          { firstName: 'Liam', midName: 'Thomas', lastName: 'Carter', phone: '+1 54321', email: 'Liam@email.com', position: 'Project Leader' }
+        ]
+
+        const contractSigners = [
+          { firstName: 'Ethan', midName: 'David', lastName: 'Miller', phone: '+1 66666', email: 'Ethan@email.com', position: 'CLO' }
+        ]
+
+        const companyAddresses = [
+          { address: 'Off. 1 Broadway ,14th Floor, Cambridge Innovation Center', state: 'Massachusetts', city: 'Cambridge', zipCode: '01242', country: 'America' }
+        ]
+
+        const returnAddresses = [
+          { warehouse: 'LAX01', returnMethod: '快递退回', returnChannel: 'USPS', returnAddress: '1818 Rogers Rd #4326, San Antonio, TX 78251, USA', contactName: 'Daniel Matthew Clark', contactPhone: '+1 54321', contactEmail: 'Daniel@email.com' },
+          { warehouse: 'ORD01', returnMethod: '快递退回', returnChannel: 'USPS', returnAddress: '117 Co Rd 5720, Castroville, TX 78009, USA', contactName: 'Ava Elizabeth Garcia', contactPhone: '+1 12345', contactEmail: 'Ava@email.com' },
+          { warehouse: 'DFW01', returnMethod: '快递退回', returnChannel: 'USPS', returnAddress: '606 Lorimor Ct, San Antonio, TX 78258, USA', contactName: 'Amelia Rose Davis', contactPhone: '+1 66666', contactEmail: 'Amelia@email.com' },
+          { warehouse: 'ATL01', returnMethod: '快递退回', returnChannel: 'USPS', returnAddress: '2314 W 80th St #7, Hialeah, FL 33016, USA', contactName: 'Evelyn Sarah Rodriguez', contactPhone: '+1 54321', contactEmail: 'Evelyn@email.com' }
+        ]
+
+        const operationLogData = [
+          { type: '修改客户信息', fieldName: 'postal_code邮政邮政编码', originalValue: '518000', targetValue: '89107', operationTime: '2026/4/15 22:26', operator: 'admin(10300136)' },
+          { type: '修改客户信息', fieldName: 'routing_number路由号码', originalValue: '', targetValue: '518000', operationTime: '2026/4/15 22:14', operator: 'admin(10300136)' },
+          { type: '修改客户信息', fieldName: 'contact_mid_mid_name联系人中间名', originalValue: 'Teapplix Inc Inc', targetValue: '', operationTime: '2026/4/15 22:14', operator: 'admin(10300136)' },
+          { type: '修改客户信息', fieldName: 'bank_name_code_code银行名称', originalValue: '', targetValue: 'Citi Bank', operationTime: '2026/4/15 22:14', operator: 'admin(10300136)' },
+          { type: '客户状态变更', fieldName: 'customer_status客户签约状态', originalValue: '待签约', targetValue: '已签约', operationTime: '2026/4/15 22:14', operator: 'admin(10300136)' },
+          { type: '上传合同', fieldName: 'file_url上传合同', originalValue: '', targetValue: 'https://fsl.yanwenexpress.com/downloadfile/117939/C000129TeapplixInc.【C000129TeapplixInc.【Teapplix】美国海外派销售合同VER：YW.USLSA.2025.10.22025122YW.USLSA.2025.10.220251222.pdf', operationTime: '2026/4/15 14:09', operator: 'admin(10300136)' }
+        ]
+
         const freezeData = [
           { type: '金额冻结', status: '活动', updateTime: '2026/6/22 15:18', creditLimit: '100000', tempCreditLimit: '2000', tempEffectiveTime: '2026/6/1 0:00', tempExpireTime: '2026/6/5 0:00' },
           { type: '长期不发货冻结', status: '活动', updateTime: '2025/1/22 12:21', creditLimit: '', tempCreditLimit: '', tempEffectiveTime: '', tempExpireTime: '' },
@@ -1145,6 +1447,12 @@
           contractData,
           financeInfoFields,
           paymentRecords,
+          customerContacts,
+          emergencyContacts,
+          contractSigners,
+          companyAddresses,
+          returnAddresses,
+          operationLogData,
           freezeData,
           showFreezeModal,
           freezeLogData,
